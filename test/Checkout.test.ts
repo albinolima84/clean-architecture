@@ -1,8 +1,8 @@
 import Checkout from "../src/application/Checkout";
 import GetOrdersByCpf from "../src/application/GetOrdersByCpf";
-import Item from "../src/domain/Item";
-import ItemRepositoryMemory from "../src/ItemRepositoryMemory";
-import OrderRepositoryMemory from "../src/OrderRepositoryMemory";
+import Item from "../src/domain/entity/Item";
+import ItemRepositoryMemory from "../src/infra/memory/ItemRepositoryMemory";
+import OrderRepositoryMemory from "../src/infra/memory/OrderRepositoryMemory";
 
 test("Deve fazer o pedido", async function(){
     const itemRepository = new ItemRepositoryMemory();

@@ -1,7 +1,6 @@
-import Dimension from "../domain/Dimension";
-import ItemRepository from "../ItemRepository";
-import Order from "../domain/Order";
-import OrderRepository from "../OrderRepository";
+import Order from "../domain/entity/Order";
+import ItemRepository from "../domain/repository/ItemRepository";
+import OrderRepository from "../domain/repository/OrderRepository";
 
 export default class Checkout {
     constructor(readonly itemRepository: ItemRepository, readonly orderRepository: OrderRepository){

@@ -1,4 +1,4 @@
-import Cpf from "../src/domain/Cpf";
+import Cpf from "../src/domain/entity/Cpf";
 
 const validCPFs = [
     '24511676020',

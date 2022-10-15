@@ -1,7 +1,7 @@
-import Coupon from "../src/domain/Coupon";
-import Dimension from "../src/domain/Dimension";
-import Item from "../src/domain/Item";
-import Order from "../src/domain/Order";
+import Coupon from "../src/domain/entity/Coupon";
+import Dimension from "../src/domain/entity/Dimension";
+import Item from "../src/domain/entity/Item";
+import Order from "../src/domain/entity/Order";
 
 test("Não deve criar uma ordem com CPF inválido", function (){
     expect(() => new Order('12345678901')).toThrow(new Error("CPF inválido."));

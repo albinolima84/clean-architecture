@@ -1,5 +1,3 @@
-import Dimension from "./Dimension";
-
 export default class OrderItem {
     
     constructor(readonly itemId: number, readonly price: number, readonly quantity: number/*, readonly dimension: Dimension, readonly weight: number*/){

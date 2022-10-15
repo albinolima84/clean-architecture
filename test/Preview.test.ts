@@ -1,6 +1,6 @@
 import Preview from "../src/application/Preview";
-import Item from "../src/domain/Item";
-import ItemRepositoryMemory from "../src/ItemRepositoryMemory";
+import Item from "../src/domain/entity/Item";
+import ItemRepositoryMemory from "../src/infra/memory/ItemRepositoryMemory";
 
 test("Deve simular um pedido", async function(){
     const itemRepository = new ItemRepositoryMemory();

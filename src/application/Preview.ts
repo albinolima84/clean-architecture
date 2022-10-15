@@ -1,6 +1,6 @@
-import Dimension from "../domain/Dimension";
-import ItemRepository from "../ItemRepository";
-import Order from "../domain/Order"
+import Dimension from "../domain/entity/Dimension";
+import Order from "../domain/entity/Order";
+import ItemRepository from "../domain/repository/ItemRepository";
 
 export default class Preview {
     constructor(readonly itemRepository: ItemRepository){
