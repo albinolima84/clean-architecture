@@ -22,21 +22,9 @@ test("Deve criar um pedido com cupom de desconto", function(){
     order.addItem(new Item(1, 'Notebook', 5000), 1/*, new Dimension(10, 10, 10), 10*/);
     order.addItem(new Item(2, 'Monitor', 1000), 1/*, new Dimension(10, 10, 10), 10*/);
     order.addItem(new Item(3, 'Teclado', 150), 1/*, new Dimension(10, 10, 10), 10*/);
+    order.AddCoupon(new Coupon("PrimeiraCompra", discount));
 
-    order.AddCoupon(new Coupon("PrimeiraCompra", discount, new Date(2022, 11, 31)));
-
-    expect(order.getTotal()).toBe(6150 * ((100 - discount) / 100));
-});
-
-test("Não deve adicionar cupom vencido a uma ordem", function(){
-    const discount = 15;
-    const order = new Order('111.444.777-35');
-    order.addItem(new Item(1, 'Notebook', 5000), 1/*, new Dimension(10, 10, 10), 10*/);
-    order.addItem(new Item(2, 'Monitor', 1000), 1/*, new Dimension(10, 10, 10), 10*/);
-    order.addItem(new Item(3, 'Teclado', 150), 1/*, new Dimension(10, 10, 10), 10*/);
-
-    expect(() => order.AddCoupon(new Coupon("PrimeiraCompra", discount, new Date(2022, 7, 31)))).toThrow(new Error("Cupom vencido."));
-    expect(order.getTotal()).toBe(6150);
+    expect(order.getTotal()).toBe(5227.5);
 });
 
 test("Não deve adicionar item a ordem com quantidade negativa", function(){

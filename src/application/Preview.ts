@@ -1,9 +1,10 @@
 import Dimension from "../domain/entity/Dimension";
 import Order from "../domain/entity/Order";
+import CouponRepository from "../domain/repository/CouponRepository";
 import ItemRepository from "../domain/repository/ItemRepository";
 
 export default class Preview {
-    constructor(readonly itemRepository: ItemRepository){
+    constructor(readonly itemRepository: ItemRepository, readonly couponRepository: CouponRepository){
 
     }
 
@@ -13,6 +14,10 @@ export default class Preview {
             const item = await this.itemRepository.getItem(orderItem.idItem);
             order.addItem(item, orderItem.quantity);
         }
+        if(input.coupon) {
+            const coupon = await this.couponRepository.get(input.coupon);
+            if (coupon) order.AddCoupon(coupon);
+        }
         const total = order.getTotal();
         return total;
     }
@@ -20,5 +25,6 @@ export default class Preview {
 
 type Input = {
     cpf: string,
-    orderItems: { idItem: number, quantity: number }[]
+    orderItems: { idItem: number, quantity: number }[],
+    coupon?: string
 }
